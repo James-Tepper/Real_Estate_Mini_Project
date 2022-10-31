@@ -24,8 +24,8 @@ const preexisting_properties = [
         property_type: 'Duplex'
     },
     {
-        state: 'NY',
-        city: 'New York City',
+        state: 'HI',
+        city: 'Haleiwa',
         street: 'Broadway',
         property_type: 'Apartment'
     },
