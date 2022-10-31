@@ -32,6 +32,7 @@ submit_btn.addEventListener("click", function (event) {
   }
 });
 
+
 main = () => {
   properties.generate_preexisting_properties(preexisting_properties);
   properties.render();
