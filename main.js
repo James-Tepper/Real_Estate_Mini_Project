@@ -1,5 +1,6 @@
 const app = document.querySelector("#App");
-const submit_btn = document.querySelector("#submit_btn");
+const submit_btn = document.querySelector(".submit_btn");
+const delete_btn = document.querySelector(".delete_btn")
 //inputs
 const state = document.querySelector(".state");
 const city = document.querySelector(".city");
@@ -18,20 +19,21 @@ submit_btn.addEventListener("click", function (event) {
   );
   properties.add_listing(new_listing);
   event.preventDefault();
-  new_listing.render() // render this instance
-
+  new_listing.render(); // render this instance
 });
-
-
-
-
-
-
 
 main = () => {
   properties.generate_preexisting_properties(preexisting_properties);
-  properties.render()
+  properties.render();
 };
-
 main();
+
+
+// delete_btn.addEventListener("click", function (event){
+//   console.log(event)
+//   console.log('deleted')
+
+// })
+
+
 
