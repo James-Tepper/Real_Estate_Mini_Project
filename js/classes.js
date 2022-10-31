@@ -20,8 +20,14 @@ class Properties {
     }
     
     }
-}
 
+render(){ // all listings
+    let listingWrapper = document.createElement('div')
+    listingWrapper.innerHTML = 'this is the listing wrapper'
+      this.property_list.map(listing => {listing.render()})
+        
+}
+}
 
 class Listing {
     constructor(state, city, street, property_type){
@@ -34,9 +40,22 @@ class Listing {
 
 
 
-    render(){
-        if (this.visible){
-            console.log('render method')
+    render(){ // each listing
+        if (this.visible){ 
+            const listing = document.createElement("div")
+            listing.class = "listing"
+
+            const listing_content = document.createElement("p")
+            listing_content.innerHTML = `
+            State: ${this.state}
+            City: ${this.city}
+            Street: ${this.street}
+            Type: ${this.property_type}
+            `
+            
+            listing.append(listing_content)
+            return app.append(listing)
+
         }
     }
 }

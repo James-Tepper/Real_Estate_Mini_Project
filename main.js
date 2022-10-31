@@ -16,20 +16,22 @@ submit_btn.addEventListener("click", function (event) {
     street.value,
     type.value
   );
-
   properties.add_listing(new_listing);
   event.preventDefault();
-  console.log(properties);
+  new_listing.render() // render this instance
+
 });
+
+
+
+
+
+
 
 main = () => {
   properties.generate_preexisting_properties(preexisting_properties);
+  properties.render()
 };
 
 main();
 
-/*
-Take the forums => Append to array => Pass them as parameters 
-
-forms = Listing
-*/
