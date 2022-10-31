@@ -1,6 +1,7 @@
-const app = document.querySelector("#App");
+const app = document.querySelector("#app");
 const submit_btn = document.querySelector(".submit_btn");
 const delete_btn = document.querySelector(".delete_btn")
+const user_input = document.querySelector(".user_input")
 //inputs
 const state = document.querySelector(".state");
 const city = document.querySelector(".city");
@@ -17,9 +18,18 @@ submit_btn.addEventListener("click", function (event) {
     street.value,
     type.value
   );
-  properties.add_listing(new_listing);
-  event.preventDefault();
-  new_listing.render(); // render this instance
+  if (!state.value || !city.value || !street.value || !type.value){
+    alert('Please fill out the form')
+  } else{
+    properties.add_listing(new_listing);
+    event.preventDefault();
+    new_listing.render(); // render this instance
+  // reset values after info sent
+    state.value = ''
+    city.value = ''
+    street.value = ''
+    type.value = ''
+  }
 });
 
 main = () => {

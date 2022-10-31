@@ -22,7 +22,7 @@ class Properties {
   // ONLY CALLED ONCE AT BEGINNING
   render() {
     // all listings
-    let listingWrapper = document.createElement("div");
+    let listingWrapper = document.createElement("section");
     this.property_list.map((listing) => {
       listing.render();
     });
@@ -43,7 +43,7 @@ class Listing {
 
     if (this.visible) {
       const listing = document.createElement("div");
-      listing.class = "listing";
+      listing.className = "listing";
 
       const state = document.createElement("span");
       const city = document.createElement("span");
@@ -65,7 +65,7 @@ class Listing {
       Street: ${this.street}
       `
       property_type.innerText = `
-      State: ${this.property_type}
+      Type: ${this.property_type}
       `
             
       const delete_btn = document.createElement("button");
@@ -76,7 +76,7 @@ class Listing {
       })
       
       listing.append(state, city, street, property_type, delete_btn);
-      return app.append(listing);
+      return app.prepend(listing)
       
     }
 
