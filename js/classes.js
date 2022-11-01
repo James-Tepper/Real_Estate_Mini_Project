@@ -30,7 +30,7 @@ class Properties {
 }
 
 class Listing {
-  constructor(state, city, street, property_type, comments) {
+  constructor(state, city, street, property_type) {
     this.state = state;
     this.city = city;
     this.street = street;
